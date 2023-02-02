@@ -1,0 +1,34 @@
+{
+    "folders": [
+      {
+        "path": ".",
+        "name": "🗿 Root"
+      },
+      {
+        "path": "backend",
+        "name": "🍑 Backend"
+      },
+      {
+        "path": "frontend",
+        "name": "🍒 Frontend",
+      },
+      {
+        "path": "cdk",
+        "name": "🚧 CDK"
+      },
+    ],
+    "settings": {
+        "files.exclude": {
+            "**/.git": true,
+            "**/.svn": true,
+            "**/.hg": true,
+            "**/CVS": true,
+            "**/.DS_Store": true,
+            "**/Thumbs.db": true,
+            "**/node_modules/*": true,
+            "frontend/**": true,
+            "backend/**": true,
+            "cdk/**": true,
+        }
+    }
+  }
