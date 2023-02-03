@@ -1,5 +1,5 @@
-import { greetings } from './routes/greetings';
-import { t } from './context';
+import { greetings } from 'routes/greetings';
+import { t } from 'context';
 
 export const appRouter = t.router({
   greetings,

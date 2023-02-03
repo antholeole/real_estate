@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    //"baseUrl": "./src",
+    "baseUrl": "./src",
     "outDir": "./dist",
     "module": "commonjs",
     "target": "esnext",
@@ -16,9 +16,9 @@
       "@types/jest",
       "@types/service-worker-mock"
     ],
-    //"composite": true
+    "composite": true
   },
-  "include": ["src"],
+  "include": ["src", "global.d.ts"],
   "exclude": ["node_modules", "dist", "test"],
   "declaration": true,
   "declarationMap": true
