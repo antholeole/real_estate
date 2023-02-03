@@ -5,12 +5,12 @@
         "name": "🗿 Root"
       },
       {
-        "path": "backend",
-        "name": "🍑 Backend"
+        "path": "server",
+        "name": "🍑 Server"
       },
       {
-        "path": "frontend",
-        "name": "🍒 Frontend",
+        "path": "client",
+        "name": "🍒 Client",
       },
       {
         "path": "cdk",
@@ -26,9 +26,14 @@
             "**/.DS_Store": true,
             "**/Thumbs.db": true,
             "**/node_modules/*": true,
-            "frontend/**": true,
-            "backend/**": true,
+            "client/**": true,
+            "server/**": true,
             "cdk/**": true,
         }
+    },
+    "extensions": {
+      "recommendations": [
+        "astro-build.astro-vscode"
+      ]
     }
   }
