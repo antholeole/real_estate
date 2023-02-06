@@ -20,5 +20,5 @@ jobs:
         with:
           command: up
           stack-name: pub
-        #env:
-          #PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
+        env:
+          PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
