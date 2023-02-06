@@ -4,3 +4,10 @@
 2. [Install direnv](https://direnv.net/docs/installation.html)
 3. In the root of the repo run, `direnv allow`
 4. This will install all the dev dependencies
+
+### On Clone:
+
+You need to update github secrets:
+
+1. `PULUMI_ACCESS_TOKEN`
+2.
