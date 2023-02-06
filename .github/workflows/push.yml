@@ -5,6 +5,9 @@ on:
       - main
 jobs:
   update:
+    defaults:
+      run:
+        working-directory: ./cdk
     name: Deploy
     runs-on: ubuntu-latest
     steps:
