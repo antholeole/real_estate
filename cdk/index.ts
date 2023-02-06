@@ -8,6 +8,6 @@ const project = new cloudflare.PagesProject("buildConfig", {
         destinationDir: "dist",
         rootDir: "/client",
     },
-    name: "testingProject",
+    name: "testing-project",
     productionBranch: "main",
 });
