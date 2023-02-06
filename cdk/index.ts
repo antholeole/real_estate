@@ -8,6 +8,24 @@ const project = new cloudflare.PagesProject("buildConfig", {
         destinationDir: "dist",
         rootDir: "/client",
     },
+    source: {
+        type: "github",
+        config: {
+            deploymentsEnabled: true,
+            owner: "antholeole",
+            repoName: "real_estate", //TODO: get this from GH actions
+            prCommentsEnabled: true,
+            previewBranchExcludes: [
+                "main",
+            ],
+            previewBranchIncludes: [
+                "dev",
+            ],
+            previewDeploymentSetting: "custom",
+            productionBranch: "main",
+            productionDeploymentEnabled: true,
+        }
+    },
     name: "testing-project",
     productionBranch: "main",
 });
