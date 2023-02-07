@@ -13,23 +13,21 @@ const CORS_HEADERS = new Map([
   ['Access-Control-Allow-Headers', '*']
 ]);
 
-const fetch = async (request: Request): Promise<Response> => {
-  const getTrpcResponse = () => fetchRequestHandler({
-    endpoint: '/api',
-    req: request,
-    router: appRouter,
-    createContext,
-  });
+export default {
+  fetch: async (request: Request): Promise<Response> => {
+    const getTrpcResponse = () => fetchRequestHandler({
+      endpoint: '/api',
+      req: request,
+      router: appRouter,
+      createContext,
+    });
 
-  if (globalThis.MINIFLARE != undefined) {
-    const res = request.method == 'OPTIONS' ? new Response() : await getTrpcResponse();
-    CORS_HEADERS.forEach((value, header) => res.headers.append(header, value));
-    return res
+    if (globalThis.MINIFLARE != undefined) {
+      const res = request.method == 'OPTIONS' ? new Response() : await getTrpcResponse();
+      CORS_HEADERS.forEach((value, header) => res.headers.append(header, value));
+      return res
+    }
+
+    return getTrpcResponse()
   }
-
-  return getTrpcResponse()
 }
-
-addEventListener('fetch', (event) => {
-  event.respondWith(fetch(event.request));
-});

@@ -4,9 +4,10 @@
     "description": "Cloudflare worker TypeScript template",
     "main": "dist/worker.js",
     "scripts": {
+        "build:dev": "LOCAL=true node build.js",
         "build": "node build.js",
         "format": "prettier --write  '*.{json,js}' 'src/**/*.{js,ts}' 'test/**/*.{js,ts}'",
-        "dev": "miniflare dist/worker.js --watch --debug"
+        "dev": "node miniflare.mjs"
     },
     "author": "author",
     "license": "MIT OR Apache-2.0",
