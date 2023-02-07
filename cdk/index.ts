@@ -1,9 +1,20 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as cloudflare from "@pulumi/cloudflare";
 
+
+const deploymentConfig = {
+    environmentVariables: {
+        NODE_VERSION: 14
+    }
+}
+
 const project = new cloudflare.PagesProject("project", {
     name: "testing-project",
     accountId: "e0d74c227439ece29e62209d109ae43e",
+    deploymentConfigs: {
+        production: deploymentConfig,
+        preview: deploymentConfig,
+    },
     buildConfig: {
         buildCommand: "npm run build",
         destinationDir: "dist",
