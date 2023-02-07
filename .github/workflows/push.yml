@@ -4,13 +4,18 @@ on:
     branches:
       - main
 jobs:
-  update:
-    name: Deploy
+  update-infra:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
     - uses: cachix/install-nix-action@v18
-    - run: sh
-    - run: nix-shell
-    - run: cd cdk
-    - run: pulumi up
+    - uses: workflow/nix-shell-action@v3
+      env:
+        PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
+        CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_ACCESS_TOKEN }}
+        CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      with:
+        packages: nodejs-19_x,wrangler,pulumi
+        script: |
+          cd cdk
+          pulumi up -y
