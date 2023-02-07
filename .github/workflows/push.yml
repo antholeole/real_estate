@@ -5,17 +5,11 @@ on:
       - main
 jobs:
   update:
-    defaults:
-      run:
-        working-directory: ./cdk
     name: Deploy
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
     - uses: cachix/install-nix-action@v18
-      with:
-        nix_path: nixpkgs=channel:nixos-unstable
-    - run: ls
     - run: nix-shell
     - run: cd cdk
     - run: pulumi up
