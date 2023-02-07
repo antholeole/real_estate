@@ -4,7 +4,7 @@ import * as cloudflare from "@pulumi/cloudflare";
 
 const deploymentConfig = {
     environmentVariables: {
-        NODE_VERSION: 14
+        NODE_VERSION: 17
     }
 }
 
