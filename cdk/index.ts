@@ -1,7 +1,8 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as cloudflare from "@pulumi/cloudflare";
 
-const project = new cloudflare.PagesProject("buildConfig", {
+const project = new cloudflare.PagesProject("project", {
+    name: "testing-project",
     accountId: "e0d74c227439ece29e62209d109ae43e",
     buildConfig: {
         buildCommand: "npm run build",
@@ -26,6 +27,5 @@ const project = new cloudflare.PagesProject("buildConfig", {
             productionDeploymentEnabled: true,
         }
     },
-    name: "testing-project",
     productionBranch: "main",
 });
