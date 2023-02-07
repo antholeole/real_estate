@@ -22,6 +22,8 @@ jobs:
           npm i
           pulumi stack select pub
           pulumi up -y
+          cd ../server
+          npm i
           cd ../client
           npm i
           npm run build
