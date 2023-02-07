@@ -21,3 +21,7 @@ jobs:
           npm i
           pulumi stack select pub
           pulumi up -y
+          cd ../client
+          npm i
+          npm run build
+          wrangler pages publish dist --project-name=${{ secrets.PROJECT_NAME }}
