@@ -10,6 +10,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - uses: cachix/install-nix-action@v18
+    - run: sh
     - run: nix-shell
     - run: cd cdk
     - run: pulumi up
