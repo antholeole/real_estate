@@ -18,4 +18,5 @@ jobs:
         packages: nodejs-19_x,wrangler,pulumi
         script: |
           cd cdk
+          pulumi stack select pub
           pulumi up -y
