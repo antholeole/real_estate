@@ -16,9 +16,8 @@ const project = new cloudflare.PagesProject("project", {
         preview: deploymentConfig,
     },
     buildConfig: {
-        buildCommand: "npm run build",
-        destinationDir: "dist",
-        rootDir: "/client",
+        buildCommand: "cd client && npm i && npm run build",
+        destinationDir: "client/dist",
     },
     source: {
         type: "github",
