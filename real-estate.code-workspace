@@ -35,5 +35,12 @@
       "recommendations": [
         "astro-build.astro-vscode"
       ]
+    },
+    "launch": {
+      "version": "0.2.0",
+      "compounds": [{
+        "name": "Launch Application",
+        "configurations": ["Launch Server", "Launch Client"]
+      }]
     }
   }

@@ -7,7 +7,7 @@ const mf = new Miniflare({
     host: "127.0.0.1",
     watch: true,
     sourceMap: true,
-    port: 3000,
+    port: 8458,
     log: new Log(LogLevel.DEBUG),
 })
 

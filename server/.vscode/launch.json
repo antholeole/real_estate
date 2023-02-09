@@ -1,7 +1,7 @@
 {
     "configurations": [
       {
-        "name": "Miniflare (npm)",
+        "name": "Launch Server",
         "type": "node",
         "request": "launch",
         "runtimeExecutable": "npm",

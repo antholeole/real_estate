@@ -13,3 +13,4 @@ You need to update github secrets:
 2. `CLOUDFLARE_ACCOUNT_ID`
 3. `CLOUDFLARE_ACCESS_TOKEN`
 4. `PROJECT_NAME` (non-secret)
+5. `HOST` (non-secret)
