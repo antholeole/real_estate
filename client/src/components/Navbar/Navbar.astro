@@ -1,0 +1,136 @@
+---
+import Hamburger from 'components/Navbar/Hamburger.astro';
+
+---
+<>
+<div class="placeholder" />
+<nav>
+    <div class="logo">
+        <h3>Lana Oleinik</h3>
+    </div>
+
+
+    <div class="hamburger">
+        <Hamburger />
+    </div>
+
+    <div class="rest">
+        <div>About</div>
+        <div>Just sold</div>
+    </div>
+
+    <div class="contact">
+        <p>Contact Me</p>
+    </div>
+</nav>
+</>
+<script defer>
+    const hamburger = document.querySelector('.hamburger');
+    const navbar = document.querySelector('nav');
+    const rest = document.querySelector('.rest');
+
+    hamburger.addEventListener('click', () => {
+        if (rest.classList.contains('show')) {
+            rest.classList.remove('show');
+            hamburger.setAttribute('open', '');
+        } else {
+            hamburger.removeAttribute('open');
+            rest.classList.add('show');
+        }
+    });
+
+    // add a placeholder element so that the navbar doesn't jump when it becomes fixed
+    document.querySelector('.placeholder').style.height = navbar.clientHeight + "px";
+</script>
+<style lang="scss">
+    .placeholder {
+        background-color: $bgColor;
+    }
+
+    nav {
+        z-index: 5;
+
+        background-color: $bgColor;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+
+        margin: 0;
+        display: grid;
+
+        grid-template: "logo rest contact" auto / 1fr auto auto;
+
+        margin: 0;
+        padding: 10px;
+        color: white;
+
+        > * > * {
+            padding: 12px 20px;
+            margin: 8px;
+        }
+
+        .rest {
+            grid-area: rest;
+
+            div {
+                display: inline-block;
+            }
+        }
+
+        .logo {
+            grid-area: logo;
+
+            h3 {
+                margin: 0;
+                font-style: italic;
+                font-family: 'Montserrat', sans-serif;
+                font-size: 1.3rem;
+            }
+        }
+
+        .hamburger {
+            grid-area: hamburger;
+            display: none;
+
+            align-items: center;
+            margin-left: 1rem;
+        }
+
+        .contact {
+            grid-area: contact;
+            border-radius: 12px;
+
+            p {
+                border: 1px solid white;
+                border-radius: 12px;
+            }
+        }
+    }
+
+    @media (max-width: $mobileMaxWidth) {
+            nav {
+                grid-template: "logo contact hamburger" 1fr
+                        "rest rest rest" auto
+                        "rest rest rest" auto / 1fr auto auto;
+
+                .rest {
+                    display: none;
+                    color: $bgColor;
+                    background-color: white;
+
+                    div {
+                        display: block;
+                    }
+
+                    &.show {
+                        display: block;
+                    }
+                }
+
+                .hamburger {
+                    display: flex;
+                }
+            }
+        }
+</style>

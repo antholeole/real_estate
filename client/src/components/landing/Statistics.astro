@@ -1,0 +1,81 @@
+---
+import Card from "components/Card.astro";
+
+---
+<section>
+    <Card>
+        <div class="header">
+            <div class="title">
+                <h3>Lana Oleinik</h3>
+                <h4>Realtor</h4>
+            </div>
+
+
+            <div class="description">
+                <small>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                </small>
+            </div>
+        </div>
+        <div class="statistics">
+            <div>STAT ONE</div>
+            <div>STAT TWO</div>
+            <div>STAT THREE</div>
+        </div>
+    </Card>
+</section>
+<style lang="scss">
+    section {
+        padding: 30px;
+
+        .header {
+            display: grid;
+            padding: 10px;
+            grid-template: "title description ." auto
+                        ". description ." auto / auto minmax(0px, 300px) 1fr;
+            column-gap: 30px;
+
+            > * {
+                margin: 0;
+                display: flex;
+                align-items: center;
+            }
+
+            .title {
+                grid-area: title;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+
+                > * {
+                    margin: 0;
+                }
+            }
+
+            .description {
+                grid-area: description;
+                color: gray;
+            }
+        }
+
+        .statistics {
+            background-color: $cardColor;
+            border-radius: $cardBorderRadius;
+            border: 1px solid darken($color: $cardColor, $amount: 10%);
+            margin: 10px;
+            padding: 25px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+    }
+
+    @media (max-width: $mobileMaxWidth) {
+        section {
+            .statistics {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    }
+</style>

@@ -12,7 +12,19 @@
   },
   "dependencies": {
     "@astrojs/cloudflare": "^6.1.1",
+    "@astrojs/react": "^2.0.2",
+    "@nanostores/react": "^0.4.1",
     "@trpc/client": "^10.9.1",
-    "astro": "^2.0.6"
+    "@types/react": "^18.0.27",
+    "@types/react-dom": "^18.0.10",
+    "astro": "^2.0.6",
+    "astro-icon": "^0.8.0",
+    "hamburger-react": "^2.5.0",
+    "nanostores": "^0.7.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "sass": "^1.58.0"
   }
 }

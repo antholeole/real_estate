@@ -1,0 +1,41 @@
+---
+import TestimonyCard from "./TestimonyCard.astro";
+
+---
+<section>
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        {[...Array(5)].map(() => () =>  <TestimonyCard class="swiper-slide" authorName="Billy Joe" date="Aug 14"  >
+          Lana is the perfect realtor! She is very personable, focused on details, and knowledgeable. She listened to our goals and at tight timelines helped to find out the property that met all our requirements. I can't recommend Lana highly enough!!
+        </TestimonyCard>)}
+      </div>
+      <div class="swiper-pagination" />
+  </div>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+  <script is:inline src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script is:inline>
+    new Swiper('.swiper', {
+        loop: true,
+        centeredSlides: true,
+        centeredSlidesBounds: true,
+        slidesPerView: 'auto',
+        spaceBetween: 20,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+    })
+  </script>
+</section>
+  <style lang="scss">
+    section {
+      .swiper {
+        padding: 20px;
+
+        .swiper-pagination {
+          bottom: 0;
+        }
+      }
+    }
+  </style>

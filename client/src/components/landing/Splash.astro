@@ -1,0 +1,218 @@
+---
+import { Icon } from 'astro-icon'
+---
+<section class="splash">
+    <div class="cta">
+        <h1>
+            <span class="find">Find<br></span>
+            <span class="your">your</span>
+            <span class="new">&nbsp;new<br></span>
+            <span class="home"><Icon pack="ic" name="round-home" />&nbsp;home</span>
+        </h1>
+        <small>
+            Buy and sell side realtor in the northern suburbs of Chicago since 2012.
+            Trusted by over 200 families.
+        </small>
+        <div class="cta-buttons">
+            <button>
+                <span>See Listings&nbsp;<Icon pack="lucide" name="arrow-up-right" /></span>
+            </button>
+            <button>
+                Contact
+            </button>
+        </div>
+    </div>
+    <div class="splash-img">
+        <div class="shape top-left" />
+        <div class="shape bottom-right" />
+        <img src="assets/placeholder.png" alt="A starry night sky.">
+        <div class="shape center" />
+    </div>
+</section>
+<style lang="scss">
+    .splash {
+        background-color: $bgColor;
+        box-sizing: border-box;
+
+        color: white;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: normal;
+
+        padding: 50px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10%;
+
+        > div {
+            max-width: 400px;
+
+        }
+
+        .splash-img {
+            $borderRadius: 30px;
+            $bgShapeSize: 60%;
+
+            flex: 3;
+            position: relative;
+
+            .shape {
+                position: absolute;
+                border-radius: $borderRadius;
+                z-index: 1;
+            }
+
+            .top-left {
+                height: $bgShapeSize;
+                aspect-ratio: 1/1;
+                background-color: white;
+                top: 0;
+                left: 0;
+            }
+
+            .bottom-right {
+                height: $bgShapeSize;
+                aspect-ratio: 1/1;
+                background-color: #FF91D9;
+                bottom: 0;
+                right: 0;
+            }
+
+            .center {
+                top: 10%;
+                left: 10%;
+                z-index: 3;
+                width: 80%;
+                aspect-ratio: 1;
+                border: 2px solid black;
+                border-radius: 0px;
+                transform-origin: center;
+                transform: rotate(45deg);
+            }
+
+            img {
+                position: relative;
+                $spacing: 7%;
+                margin: $spacing;
+                max-width: 100% - ($spacing * 2);
+                border-radius: $borderRadius;
+                z-index: 2;
+            }
+
+            .diamond-focus {
+                position: absolute;
+                left: 0;
+                z-index: 3;
+
+
+            }
+        }
+
+        .cta {
+            flex: 3;
+        }
+
+        .cta-buttons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: flex-start;
+            gap: 20px;
+
+            button {
+                border: none;
+                padding: 15px 50px;
+                border-radius: 10px;
+                font-size: 1rem;
+
+                &:first-child {
+                    background-color: white;
+                    color: $bgColor;
+
+                    white-space: nowrap;
+
+                    span {
+                        display: flex;
+                        align-items: center;
+                    }
+
+                    svg {
+                        display: inline;
+                        width: 1.3rem;
+                        height: 1.3rem;
+                    }
+                }
+
+                &:last-child {
+                    background-color: transparent;
+                    color: white;
+                    border: 2px solid white;
+                }
+            }
+        }
+
+        h1 {
+            font-size: 3rem;
+
+            .find {
+                font-size: 3rem;
+            }
+
+            .your {
+                font-size: 5rem;
+                font-style: italic;
+            }
+
+            .new {
+                top: 0;
+                font-size: 2rem;
+                vertical-align: top;
+            }
+
+            .home {
+                font-size: 3rem;
+                display: flex;
+                align-items: center;
+
+                svg {
+                    width: 3rem;
+                    height: 3rem;
+                }
+            }
+        }
+
+        small {
+            color: rgb(221, 221, 221);
+            font-size: smaller;
+        }
+    }
+
+    @media (max-width: 900px) {
+        .splash {
+            flex-direction: column;
+            align-items: center;
+            padding: 40px;
+
+            gap: 80px;
+
+            .splash-img {
+                width: 100%;
+            }
+
+            .cta {
+                max-width: 400px;
+                display: flex;
+                flex-direction: column;
+
+                .cta-buttons {
+                    justify-content: center;
+                }
+
+                h1 {
+                    margin: auto;
+                    display: inline-block;
+                }
+            }
+        }
+    }
+</style>
